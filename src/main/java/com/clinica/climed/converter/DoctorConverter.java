@@ -19,7 +19,7 @@ public class DoctorConverter {
         return listOut.stream().toArray(String[]::new);
     }
 	
-	public static String[] carroToStringArray(DoctorDTO doctor) {
+	public static String[] doctorToStringArray(DoctorDTO doctor) {
         List<String> listOut = new ArrayList<>();
         
 //        listOut.add(doctor.getXxx());
@@ -34,7 +34,7 @@ public class DoctorConverter {
         return listOut.stream().toArray(String[]::new);
     }
 	
-	public static Doctor getCarro(DoctorDTO doctorDto) {
+	public static Doctor getDoctor(DoctorDTO doctorDto) {
 
 		Doctor doctor = new Doctor();
 		
