@@ -190,4 +190,14 @@ public class DoctorDTO implements Serializable{
 		this.complement = complement;
 	}
 
+	public String getInvalid() {
+		return invalid;
+	}
+
+	public void setInvalid(String invalid) {
+		this.invalid = invalid;
+	}
+	
+	
+
 }
