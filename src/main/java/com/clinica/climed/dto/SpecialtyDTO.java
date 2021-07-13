@@ -1,5 +1,7 @@
 package com.clinica.climed.dto;
 
+import java.io.Serializable;
+
 import com.clinica.climed.entities.Specialty;
 
 public class SpecialtyDTO implements Serializable {
