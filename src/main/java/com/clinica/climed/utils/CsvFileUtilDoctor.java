@@ -100,30 +100,42 @@ public class CsvFileUtilDoctor {
 		doctorList.add(doctor.getRg());
 		doctorList.add(doctor.getCpf());
 
-//        if(doctor.getXxx() != null){
-//            doctorList.add(doctor.getXxx().toString());
-//        }
-//
-//        if(doctor.getXxx() != null){
-//            doctorList.add(doctor.getXxx().toString());
-//        }
-//
-//        if(doctor.getXxx() != null){
-//            doctorList.add(doctor.getXxx().toString());
-//        }
-//
-//        if(doctor.getXxx() != null){
-//            doctorList.add(doctor.getXxx().toString());
-//        }
-//
-//        if(doctor.getXxx() != null){
-//            doctorList.add(doctor.getXxx().toString());
-//        }
-//
-//        if(doctor.getXxx() != null){
-//            doctorList.add(doctor.getXxx().toString());
-//        }
+        if(doctor.getCrm() != null){
+            doctorList.add(doctor.getCrm().toString());
+        }
 
+        if(doctor.getPercentage()!= null){
+            doctorList.add(doctor.getPercentage().toString());
+        }
+
+        if(doctor.getAddress() != null){
+            doctorList.add(doctor.getAddress().toString());
+        }
+
+        if(doctor.getCity() != null){
+            doctorList.add(doctor.getCity().toString());
+        }
+
+        if(doctor.getProvincie() != null){
+            doctorList.add(doctor.getProvincie().toString());
+        }
+
+        if(doctor.getPostalCode() != null){
+            doctorList.add(doctor.getPostalCode().toString());
+        }
+
+        
+        if(doctor.getHouseNumber() != null){
+            doctorList.add(doctor.getHouseNumber().toString());
+        }
+        
+       
+        doctorList.add(doctor.getApartmentNumber().toString());        
+       
+        doctorList.add(doctor.getDistrict().toString());        
+        
+        doctorList.add(doctor.getComplement().toString());           
+        
 		doctorList.add(DateUtil.getNow());
 
 		this.csvWriter.writeNext(doctorList.stream().toArray(String[]::new));
