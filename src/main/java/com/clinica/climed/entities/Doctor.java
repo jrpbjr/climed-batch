@@ -16,9 +16,15 @@ public class Doctor {
 	private String apartmentNumber;
 	private String district;
 	private String complement;
+	private String invalid;
 	
 	public Doctor() {
 		super();
+	}
+	
+	public Doctor(String invalid) {
+		super();
+		this.invalid = invalid;
 	}
 
 	public Doctor(Long id, String name, String rg, String cpf, String crm, Double percentage, String address,
@@ -151,6 +157,14 @@ public class Doctor {
 
 	public void setComplement(String complement) {
 		this.complement = complement;
+	}
+
+	public String getInvalid() {
+		return invalid;
+	}
+
+	public void setInvalid(String invalid) {
+		this.invalid = invalid;
 	}
 	
 	
