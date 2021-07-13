@@ -16,16 +16,12 @@ public class Doctor {
 	private String apartmentNumber;
 	private String district;
 	private String complement;
-	private String invalid;
 	
 	public Doctor() {
 		super();
 	}
 	
-	public Doctor(String invalid) {
-		super();
-		this.invalid = invalid;
-	}
+	
 
 	public Doctor(Long id, String name, String rg, String cpf, String crm, Double percentage, String address,
 			String city, String provincie, String postalCode, String houseNumber, String apartmentNumber,
@@ -159,16 +155,7 @@ public class Doctor {
 		this.complement = complement;
 	}
 
-	public String getInvalid() {
-		return invalid;
-	}
-
-	public void setInvalid(String invalid) {
-		this.invalid = invalid;
-	}
-	
-	
-	
+		
 	
 	
 
