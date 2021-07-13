@@ -25,9 +25,16 @@ public class DoctorDTO implements Serializable{
 	private String apartmentNumber;
 	private String district;
 	private String complement;
+	private String invalid;
+	
 
-	public DoctorDTO() {
+	public DoctorDTO(String string, String string2, String string3, String string4, String string5, String string6, String string7, String string8, String string9, String string10, String string11, String string12, String string13, String string14, String string15) {
 		super();
+	}
+	
+	public DoctorDTO(String invalid) {
+		super();
+		this.invalid = invalid;
 	}
 
 	public DoctorDTO(Long id, String name, String rg, String cpf, String crm, Double percentage, String address,
@@ -48,6 +55,7 @@ public class DoctorDTO implements Serializable{
 		this.apartmentNumber = apartmentNumber;
 		this.district = district;
 		this.complement = complement;
+		
 	}
 	
 	public DoctorDTO(Doctor entity) {
