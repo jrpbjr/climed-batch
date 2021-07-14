@@ -3,8 +3,6 @@ package com.clinica.climed.configuration.tasklet;
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.management.RuntimeErrorException;
-
 import org.springframework.batch.core.ExitStatus;
 import org.springframework.batch.core.StepContribution;
 import org.springframework.batch.core.StepExecution;
@@ -15,6 +13,7 @@ import org.springframework.batch.repeat.RepeatStatus;
 
 import com.clinica.climed.dto.DoctorDTO;
 import com.clinica.climed.utils.CsvFileUtilDoctor;
+import com.clinica.climed.validate.DoctorValidate;
 
 public class DoctorValidateTasklet implements Tasklet, StepExecutionListener{
 	
@@ -55,9 +54,9 @@ public class DoctorValidateTasklet implements Tasklet, StepExecutionListener{
 			doctorDto = csvIn.read();
 		}
 		
-		csvIn.closeReader();
+		csvIn.closeReader();			
 		
-		this.doctorDtoList = DoctorValidate.validade(this.doctorDtoList);
+		this.doctorDtoList = DoctorValidate.validate(this.doctorDtoList);
 		
 		if(doctorDtoList.isEmpty()) {
 			throw new RuntimeException("A lista de Doctor está vazia!");
