@@ -24,5 +24,17 @@ public class BatchConfiguration {
 				.build();
 
 	}
+	
+	@Bean
+	public Step doctorValidateTaskletStep() {
+		return stepBuilderFactory
+				.get("doctorValidateTaskletStep")
+				.tasklet(new DoctorValidateTasklet("doctor-import"))
+				.build();
+	}
+	
+	
+	
+	
 
 }
