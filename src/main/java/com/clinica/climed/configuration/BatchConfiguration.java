@@ -14,6 +14,7 @@ import org.springframework.context.annotation.Configuration;
 
 import com.clinica.climed.configuration.chuncklet.DoctorItemProcessor;
 import com.clinica.climed.configuration.chuncklet.DoctorItemReader;
+import com.clinica.climed.configuration.chuncklet.DoctorItemWriter;
 import com.clinica.climed.configuration.tasklet.DoctorValidateTasklet;
 import com.clinica.climed.dto.DoctorDTO;
 import com.clinica.climed.entities.Doctor;
@@ -32,7 +33,7 @@ public class BatchConfiguration {
 	@Bean
 	public Job job() {
 		return jobBuilderFactory.get("doctorJob").start(doctorValidateTaskletStep())
-				.next(doctorEnriquecimentoChunckletStep(doctorItemReader(), doctorItemProcessor(), doctorItemWritem()))
+				.next(doctorEnriquecimentoChunckletStep(doctorItemReader(), doctorItemProcessor(), doctorItemWriter()))
 				.build();
 
 	}

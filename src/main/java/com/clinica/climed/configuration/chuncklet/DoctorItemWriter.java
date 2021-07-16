@@ -17,9 +17,9 @@ import com.clinica.climed.utils.CsvFileUtilDoctor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-public class DoctorItemWrite implements ItemWriter<Doctor>, StepExecutionListener {
+public class DoctorItemWriter implements ItemWriter<Doctor>, StepExecutionListener {
 
-	private static final Logger LOGGER = LoggerFactory.getLogger(DoctorItemWrite.class);	
+	private static final Logger LOGGER = LoggerFactory.getLogger(DoctorItemWriter.class);	
 	private CsvFileUtilDoctor CsvSaveDoctor;
 	
 	@Autowired
