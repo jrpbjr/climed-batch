@@ -12,6 +12,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
+import com.clinica.climed.configuration.chuncklet.DoctorItemProcessor;
+import com.clinica.climed.configuration.chuncklet.DoctorItemReader;
 import com.clinica.climed.configuration.tasklet.DoctorValidateTasklet;
 import com.clinica.climed.dto.DoctorDTO;
 import com.clinica.climed.entities.Doctor;
@@ -52,7 +54,7 @@ public class BatchConfiguration {
 				.get("doctorEnriquecimentoChunckletStep")
 				.<DoctorDTO, Doctor>chunck(5)
 				.reader(doctorItemReader)
-				.processor(carroItemProcessor)
+				.processor(doctorItemProcessor)
 				.writer(doctorItemWriter)
 				.build();
 	}
@@ -64,7 +66,7 @@ public class BatchConfiguration {
 	
 	@Bean
 	public ItemProcessor<DoctorDTO, Doctor> doctorItemProcessor(){
-		return new CarroItemProcessor();
+		return new DoctorItemProcessor();
 	}
 	
 	@Bean ItemWriter<Doctor> doctorItemWriter(){
