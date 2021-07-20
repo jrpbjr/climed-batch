@@ -53,7 +53,7 @@ public class BatchConfiguration {
 		
 		return stepBuilderFactory
 				.get("doctorEnriquecimentoChunckletStep")
-				.<DoctorDTO, Doctor>chunck(5)
+				.<DoctorDTO, Doctor>chunk(5)
 				.reader(doctorItemReader)
 				.processor(doctorItemProcessor)
 				.writer(doctorItemWriter)
