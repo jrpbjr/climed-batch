@@ -7,6 +7,6 @@ import org.springframework.stereotype.Repository;
 import com.clinica.climed.entities.Doctor;
 
 @Repository
-public interface DoctorRepository extends JpaRepository<Doctor, Long> {
+public interface doctorRepository extends JpaRepository<Doctor, Long> {
 
 }
