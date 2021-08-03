@@ -5,9 +5,14 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Date;
 import java.util.List;
+
+import org.apache.commons.lang3.time.DateUtils;
 
 import com.clinica.climed.dto.DoctorDTO;
 import com.clinica.climed.entities.Doctor;
@@ -26,12 +31,18 @@ public class CsvFileUtilDoctor {
 	private FileReader fileReader;
 	private FileWriter fileWriter;
 
-	public CsvFileUtilDoctor(String fileName, boolean isInput) {
+	public CsvFileUtilDoctor(String fileName, boolean isInput) throws ParseException {
 
 		if (isInput) {
 			this.fileName = PATH_INPUT_FILE + fileName + ".csv";
 		} else {
-			this.fileName = PATH_OUTPUT_FILE + fileName + "-" + DateUtil.getNow() + "-.csv";
+			
+			Date dt = new SimpleDateFormat("yyyyMMddHHmmss").parse( DateUtil.getNow());
+        	String dataFormatada = new SimpleDateFormat("yyyy-MM-dd HH_mm_ss").format(dt);
+        	
+        	 this.fileName = PATH_OUTPUT_FILE + fileName + "-" + dataFormatada + "-.csv";
+			
+//			this.fileName = PATH_OUTPUT_FILE + fileName + "-" + DateUtil.getNow() + "-.csv";
 		}
 	}
 

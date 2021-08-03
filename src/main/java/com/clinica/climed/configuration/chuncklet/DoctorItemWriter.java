@@ -1,6 +1,7 @@
 package com.clinica.climed.configuration.chuncklet;
 
 import java.io.IOException;
+import java.text.ParseException;
 import java.util.List;
 
 import org.slf4j.LoggerFactory;
@@ -28,7 +29,12 @@ public class DoctorItemWriter implements ItemWriter<Doctor>, StepExecutionListen
 	
 	@Override
 	public void beforeStep(StepExecution stepExecution) {
-		this.CsvSaveDoctor = new CsvFileUtilDoctor("saveDoctor", false);
+		try {
+			this.CsvSaveDoctor = new CsvFileUtilDoctor("saveDoctor", false);
+		} catch (ParseException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		LOGGER.info("Finalizando o WRITER...");
 		
 	}

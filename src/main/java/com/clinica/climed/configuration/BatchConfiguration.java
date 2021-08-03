@@ -11,6 +11,8 @@ import org.springframework.batch.item.ItemWriter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
+import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 import com.clinica.climed.configuration.chuncklet.DoctorItemProcessor;
 import com.clinica.climed.configuration.chuncklet.DoctorItemReader;

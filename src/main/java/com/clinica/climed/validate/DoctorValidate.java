@@ -7,6 +7,7 @@ import com.clinica.climed.utils.CsvFileUtilDoctor;
 import com.clinica.climed.converter.DoctorConverter;
 
 import java.io.IOException;
+import java.text.ParseException;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
@@ -16,7 +17,7 @@ public class DoctorValidate {
 	
 	 public DoctorValidate() {}
 	 
-	 public static List<DoctorDTO> validate(List<DoctorDTO> carroDtoList) throws IOException {
+	 public static List<DoctorDTO> validate(List<DoctorDTO> carroDtoList) throws IOException, ParseException {
 
 	        List<DoctorDTO> validList = new ArrayList<>();
 	        List<DoctorDTO> invalidList = new ArrayList<>();
@@ -35,7 +36,7 @@ public class DoctorValidate {
 	    }
 	 
 	 
-	 private static void createCsvToInvalidList(List<DoctorDTO> invalidList) throws IOException {
+	 private static void createCsvToInvalidList(List<DoctorDTO> invalidList) throws IOException, ParseException {
 
 	        if(!invalidList.isEmpty()){
 
@@ -54,7 +55,7 @@ public class DoctorValidate {
 	    }
 	 
 	 
-	 public void emptyFile(LocalDateTime localDateTime) throws IOException {
+	 public void emptyFile(LocalDateTime localDateTime) throws IOException, ParseException {
 
 	        CsvFileUtilDoctor emptyCSV = new CsvFileUtilDoctor("empty-file",false);
 
